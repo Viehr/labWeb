@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Pacifico-Regular";
+    src: url("fonts/Pacifico-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+
 body {
     margin: 0;
     color: black;
@@ -11,6 +18,39 @@ main {
     background-position: center;
     height: 650px;
 }
+
+
+
+a[class] {
+    font-family: "Pacifico-Regular";
+}
+div + ul {
+    background-color: #FF7373;
+    border-radius: 10%;
+    box-shadow: 10px 5px 5px red;
+}
+
+div > h1 {
+    font-family: "Pacifico-Regular";
+    text-shadow: 1px 1px 2px pink;
+}
+h1 > img {
+   height: 250px;
+
+}
+
+h1:before {
+    content: "\f015"; 
+    font-family: FontAwesome;
+    color: black;
+    margin-right: 10px; 
+}
+ul {
+    list-style-type: lower-greek;
+}
+
+
+
 nav {
     margin: 0px;
 }
@@ -26,10 +66,11 @@ nav {
     display: flex;
     flex-direction: column;
 }
+
 h1 {
     font-size: 50px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     color: black;
 }
 .dotaImage {
@@ -44,9 +85,8 @@ h1 {
 }
 .in {
     margin: 5px;
-    font-size: 25px;
+    font-size: 20px;
 }
-
 
 h2 {
     font-size: 50px;
@@ -59,12 +99,12 @@ h2 {
 }
 .pers {
     font-size: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .pikcha {
-    height: 280px;
-
+    height: 250px;
+    border-radius: 25% 10%;
 }
 .text {
     font-size: 20px;
@@ -72,8 +112,14 @@ h2 {
 }
 
 .spisok {
-    display: flex;
-    flex-direction: row;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    align-items: stretch;
+    padding: 0;
+    margin: 0 auto;
+    list-style-type: none;
 }
 .last {
     display: flex;
@@ -84,8 +130,8 @@ h2 {
 .p {
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 300px;
-    height: 150px;
+    width: 150px;
+
 }
 
 footer {
@@ -102,6 +148,133 @@ th {
     font-size: 25px;
 }
 
+
+.photo-flag {
+    display: inline-block;
+    width: 200px;
+    height: 130px;
+    border: 1px solid #333; 
+    background: linear-gradient(
+       to bottom,
+       #fff 0%,
+       #fff 33.3%,
+       #0052a5 33.3%,
+       #0052a5 66.6%,
+       #d52b1e 66.6%,
+       #d52b1e 100% );
+    position: relative;
+}
+
+
+.menu {
+    background-image: linear-gradient(#FF7373, white);
+    color: black;
+    padding: 16px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
+.menuContent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 500px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style-type: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.menubtn:hover .menuContent {
+    display: block;
+}
+
+.navItems {
+    font-size: 15px;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.navItems:hover {
+    background-color: #e0e0e0;
+}
+
+.pod:hover::after { 
+    content: attr(data-title); 
+    position: absolute;
+    z-index: 1;
+    background-color: gray;
+    color: white;
+    left: 10%;
+}
+
+.w {
+    position: relative;
+    display: inline-block;
+}
+.overlay {
+    position: absolute;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.w:hover .overlay {
+    display: block;
+}
+.overlay > img {
+    width: 500px;
+}
+.moving-element {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    position: absolute;
+    animation: move 2s infinite alternate;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(200px);
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width: 500px) {
+    .gallery{
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main-i{
+        max-width: 100%;
+    }    
+    .image-i img {
+        max-width: 100%;
+        height: auto;
+        width: auto;
+    }
+}
+@keyframes go-left-right {       
+    from { left: 0px; }             
+    to { left: calc(100% - 50px); } 
+}
 
 
 
