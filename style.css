@@ -5,6 +5,16 @@ body {
     flex-direction: column;
 }
 
+
+.ty {
+    list-style-type: none;
+
+}
+.ty::before {
+    content: "\2665";
+    margin-right: 8px;
+}
+
 nav {
     margin: 0px;
 }
